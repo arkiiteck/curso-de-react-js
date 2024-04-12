@@ -1,33 +1,56 @@
-li{
-    background-color: #F2F2F2;
-    width: 80%;
-    margin: 20px 10%;
-    padding: 12px;
+.TodoItem{
+    background-color:var(--white);
+    width: 60%;
+    margin: 20px 20%;
+    padding: 24px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
     position: relative;
-    border: solid 2px #2A2A2A;
-    border-radius: 20px;
+    border: solid 2px var(--black);
+    border-radius: 12px;
     list-style: none;
 }
 span{
     font-size: 20px;
 }
-p{
+.TodoItem-p{
+    padding: 0 56px 0 32px;
     font-size: 16px;
     font-weight: bold;
 }
-li > button{
-    background-color: #F2F2F2;
-    width: 40px;
-    height: 40px;
+.TodoItem-p--complete{
+    text-decoration: line-through;
+}
+.Icon{
+    background-color: var(--white);
+    
     display: grid;
     place-items: center;
     position: absolute;
     top: 50%;
-    right: 10px;
     transform: translateY(-50%);
-    color: #2A2A2A;
-    font-size: 16px;
-    border: solid 2px #2A2A2A;
-    border-radius: 8px;
+    color: var(--black);
+    font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
+}
+.Icon-check{
+    left: 16px;
+}
+.Icon-check--active{
+    color: var(--green);
+}
+.Icon-delete{
+    width: 40px;
+    height: 40px;
+    right: 16px;
+    border: solid 2px var(--black);
+    border-radius: 8px;
+    transition: .2s;
+}
+.Icon-delete:hover{
+    background-color: var(--red);
+    color: var(--white);
+    transition: .2s;
 }

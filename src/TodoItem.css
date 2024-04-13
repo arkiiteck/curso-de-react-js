@@ -1,5 +1,5 @@
 .TodoItem{
-    background-color:var(--white);
+    background-color: var(--white);
     width: 60%;
     margin: 20px 20%;
     padding: 24px 16px;
@@ -7,12 +7,13 @@
     align-items: center;
     gap: 16px;
     position: relative;
-    border: solid 2px var(--black);
     border-radius: 12px;
     list-style: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
-span{
+i{
     font-size: 20px;
+    border-radius: 50%;
 }
 .TodoItem-p{
     padding: 0 56px 0 32px;
@@ -23,8 +24,6 @@ span{
     text-decoration: line-through;
 }
 .Icon{
-    background-color: var(--white);
-    
     display: grid;
     place-items: center;
     position: absolute;
@@ -45,12 +44,11 @@ span{
     width: 40px;
     height: 40px;
     right: 16px;
-    border: solid 2px var(--black);
+    border: none;
     border-radius: 8px;
     transition: .2s;
 }
 .Icon-delete:hover{
-    background-color: var(--red);
-    color: var(--white);
+    color: var(--red);
     transition: .2s;
 }

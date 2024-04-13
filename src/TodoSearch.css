@@ -1,9 +1,9 @@
 input{
-    width: 80%;
-    margin: 0 10%;
+    width: 60%;
+    margin: 0 20% 24px;
     padding: 12px;
     font-size: 16px;
-    border: solid 2px var(--black);
+    border: solid 2px var(--white);
     border-radius: 8px;
     outline: none;
     transition: .2s;

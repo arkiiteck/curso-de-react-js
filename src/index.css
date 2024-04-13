@@ -11,8 +11,11 @@
   --blue: #5787E2;
   --green: #65c04e;
   --red: #c13737;
+  --yellow: #f3c735;
+  --orange: #f4a331;
 }
 body {
+  background: linear-gradient(90deg, var(--yellow) 0%, var(--orange) 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -11,15 +11,15 @@ const defaultTodos=[
   {text:'Texto del Item 1', completed:true},
   {text:'2. Descripción de la tarea', completed:false},
   {text:'Tercera tarea: Descripción', completed:false},
-  {text:'Información de última tarea', completed:false}
+  {text:'Quinta descripción', completed:false},
+  {text:'Información de última tarea', completed:true}
 ]
 
 function App(){
   const [todos, setTodos]=React.useState(defaultTodos)
   const [searchValue, setSearchValue]=React.useState('')
-  const completedTodos=todos.filter(todo=>todo.completed.length)
-  const totalTodos=todos.filter(todo=>todo.length)
-  console.log(searchValue);
+  const completedTodos=todos.filter(todo=>todo.completed).length;
+  const totalTodos=todos.length
   return(
     <React.Fragment>
       <TodoCounter

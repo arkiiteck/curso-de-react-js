@@ -18,33 +18,37 @@ const defaultTodos=[
 const stringyfiedTodos=JSON.stringify(defaultTodos)
 localStorage.setItem('TODOS_V1', stringyfiedTodos)
 */
-function App(){
-  const localStorageTodos=localStorage.getItem('TODOS_V1')
-  let parsedTodos
-  if(!localStorageTodos){
-    localStorage.setItem('TODOS_V1',JSON.stringify([]))
-    parsedTodos=JSON.parse(localStorageTodos)
+
+function useLocalStorage(itemName, initialValue){
+  const localStorageItem=localStorage.getItem('TODOS_V1')
+  let parsedItem
+  if(!localStorageItem){
+    localStorage.setItem(itemName,JSON.stringify(initialValue))
+    parsedItem=initialValue
   }
   else{
-    parsedTodos=JSON.parse(localStorageTodos)
+    parsedItem=JSON.parse(localStorageItem)
   }
-  const [todos, setTodos]=React.useState(parsedTodos)
+  const [item,setItem]=React.useState(parsedItem)
+  const saveItem=(newItem)=>{
+    localStorage.setItem(itemName, JSON.stringify(newItem))
+    setItem(newItem)
+  }
+  return [item,saveItem]
+}
+function App(){
+  const [todos, saveTodos]=useLocalStorage('TODOS_V1',[])
   const [searchValue, setSearchValue]=React.useState('')
-  let saveTodos=(newTodos)=>{
-    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos))
-  }
   const completeTodo=(text)=>{
     const newTodos=[...todos]
     const todoIndex=newTodos.findIndex((todo)=>todo.text==text)
     newTodos[todoIndex].completed= !newTodos[todoIndex].completed
-    setTodos(newTodos)
     saveTodos(newTodos)
   }
   const deleteTodo=(text)=>{
     const newTodos=[...todos]
     const todoIndex=newTodos.findIndex((todo)=>todo.text==text)
     newTodos.splice(todoIndex,1)
-    setTodos(newTodos)
     saveTodos(newTodos)
   }
   const completedTodos=todos.filter(todo=>todo.completed).length;

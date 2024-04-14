@@ -16,7 +16,7 @@ i{
     border-radius: 50%;
 }
 .TodoItem-p{
-    padding: 0 56px 0 32px;
+    padding: 0 56px 0 30px;
     font-size: 16px;
     font-weight: bold;
 }
@@ -36,6 +36,7 @@ i{
 }
 .Icon-check{
     left: 16px;
+    font-size: 20px;
 }
 .Icon-check--active{
     color: var(--green);
@@ -43,6 +44,8 @@ i{
 .Icon-delete{
     width: 40px;
     height: 40px;
+    display: grid;
+    place-items: center;
     right: 16px;
     border: none;
     border-radius: 8px;
@@ -51,4 +54,7 @@ i{
 .Icon-delete:hover{
     color: var(--red);
     transition: .2s;
+}
+.Icon-delete{
+    margin-top: 2px;
 }
